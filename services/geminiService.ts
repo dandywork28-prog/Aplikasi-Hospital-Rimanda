@@ -49,7 +49,6 @@ export const generateClinicalSummary = async (record: ClinicalRecord, context: s
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.2, // Low temperature for factual consistency
-        maxOutputTokens: 1024,
       }
     });
 

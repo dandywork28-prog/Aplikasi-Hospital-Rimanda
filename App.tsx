@@ -68,12 +68,11 @@ const Header = ({ role, setRole }: { role: Role, setRole: (r: Role) => void }) =
 };
 
 interface ProtectedRouteProps {
-  children: React.ReactNode;
   allowedRoles: Role[];
   currentRole: Role;
 }
 
-const ProtectedRoute = ({ children, allowedRoles, currentRole }: ProtectedRouteProps) => {
+const ProtectedRoute = ({ children, allowedRoles, currentRole }: React.PropsWithChildren<ProtectedRouteProps>) => {
   if (!allowedRoles.includes(currentRole)) {
     return (
       <div className="flex flex-col items-center justify-center h-[80vh] text-center p-6">
